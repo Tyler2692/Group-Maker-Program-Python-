@@ -1,17 +1,22 @@
 import random
 
 table1 = ["Max G"]
-table2 = []
+table2 = ["Dylan G"]
 table3 = []
 table4 = []
-table5 = ["Dylan G"]
+table5 = []
+table6 = []
+table7 = []
+table8 = []
+table9 = []
+table10 = []
 
-print ("Group Maker thing")
-classlist = ["Saige F", "Bowen H", "Leighton K", "Kylan G", "Amelie G", "Frank S", "Marceline A", "Jaylen B", "Saoirse C", "Dylan G", "Jolene F", "Antoine C", "Keily M", "Lucian L", "Scarlett D", "Max G", "Jordan D", "Flynn G", "Coraline F", "Kase S"]
+print ("Group Maker Program")
+classlist = ["Saige F", "Bowen H", "Leighton K", "Kylan G", "Amelie G", "Frank S", "Marceline A", "Jaylen B", "Saoirse C", "Jolene F", "Antoine C", "Keily M", "Lucian L", "Scarlett D", "Jordan D", "Flynn G", "Coraline F", "Kase S"]
 
-tablenumber = 4
+tablenumber = 3
 
-randompick = ["Saige F", "Bowen H", "Leighton K", "Kylan G", "Amelie G", "Frank S", "Marceline A", "Jaylen B", "Saoirse C", "Dylan G", "Jolene F", "Antoine C", "Keily M", "Lucian L", "Scarlett D", "Max G", "Jordan D", "Flynn G", "Coraline F", "Kase S"]
+randompick = ["Saige F", "Bowen H", "Leighton K", "Kylan G", "Amelie G", "Frank S", "Marceline A", "Jaylen B", "Saoirse C", "Jolene F", "Antoine C", "Keily M", "Lucian L", "Scarlett D", "Jordan D", "Flynn G", "Coraline F", "Kase S"]
 
 while len(classlist) > 0:
   randomPick = random.choice(classlist)
@@ -25,14 +30,29 @@ while len(classlist) > 0:
     table4.append(randomPick)
   if tablenumber == 5:
     table5.append(randomPick)
+  if tablenumber == 6:
+    table6.append(randomPick)
+  if tablenumber == 7:
+    table7.append(randomPick)
+  if tablenumber == 8:
+    table8.append(randomPick)
+  if tablenumber == 9:
+    table9.append(randomPick)
+  if tablenumber == 10:
+    table10.append(randomPick)
   classlist.remove(randomPick)
   tablenumber = tablenumber + 1
-  if tablenumber == 4:
-    tablenumber = 1
+  if tablenumber == 11:
+      tablenumber = 1
     
 print("Table 1: ", table1)
 print("Table 2: ", table2)
 print("Table 3: ", table3)
 print("Table 4: ", table4)
 print("Table 5: ", table5)
+print("Table 6: ", table6)
+print("Table 7: ", table7)
+print("Table 8: ", table8)
+print("Table 9: ", table9)
+print("Table 10:", table10)
 
