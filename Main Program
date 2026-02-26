@@ -1,0 +1,38 @@
+import random
+
+table1 = ["Max G"]
+table2 = []
+table3 = []
+table4 = []
+table5 = ["Dylan G"]
+
+print ("Group Maker thing")
+classlist = ["Saige F", "Bowen H", "Leighton K", "Kylan G", "Amelie G", "Frank S", "Marceline A", "Jaylen B", "Saoirse C", "Dylan G", "Jolene F", "Antoine C", "Keily M", "Lucian L", "Scarlett D", "Max G", "Jordan D", "Flynn G", "Coraline F", "Kase S"]
+
+tablenumber = 4
+
+randompick = ["Saige F", "Bowen H", "Leighton K", "Kylan G", "Amelie G", "Frank S", "Marceline A", "Jaylen B", "Saoirse C", "Dylan G", "Jolene F", "Antoine C", "Keily M", "Lucian L", "Scarlett D", "Max G", "Jordan D", "Flynn G", "Coraline F", "Kase S"]
+
+while len(classlist) > 0:
+  randomPick = random.choice(classlist)
+  if tablenumber == 1:
+    table1.append(randomPick)
+  if tablenumber == 2:
+    table2.append(randomPick)
+  if tablenumber == 3:
+    table3.append(randomPick)
+  if tablenumber == 4:
+    table4.append(randomPick)
+  if tablenumber == 5:
+    table5.append(randomPick)
+  classlist.remove(randomPick)
+  tablenumber = tablenumber + 1
+  if tablenumber == 4:
+    tablenumber = 1
+    
+print("Table 1: ", table1)
+print("Table 2: ", table2)
+print("Table 3: ", table3)
+print("Table 4: ", table4)
+print("Table 5: ", table5)
+
