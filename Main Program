@@ -1,7 +1,14 @@
 import random
 
-table1 = ["Max G"]
-table2 = ["Dylan G"]
+print('--- Group Maker 3000 ---')
+
+userinput = input("enter students names with commas: ")
+classList = userinput.split(",")
+
+random.shuffle(classList)
+
+table1 = []
+table2 = []
 table3 = []
 table4 = []
 table5 = []
@@ -11,40 +18,39 @@ table8 = []
 table9 = []
 table10 = []
 
-print ("Group Maker Program")
-classlist = ["Saige F", "Bowen H", "Leighton K", "Kylan G", "Amelie G", "Frank S", "Marceline A", "Jaylen B", "Saoirse C", "Jolene F", "Antoine C", "Keily M", "Lucian L", "Scarlett D", "Jordan D", "Flynn G", "Coraline F", "Kase S"]
+tableNumber = 1
 
-tablenumber = 3
-
-randompick = ["Saige F", "Bowen H", "Leighton K", "Kylan G", "Amelie G", "Frank S", "Marceline A", "Jaylen B", "Saoirse C", "Jolene F", "Antoine C", "Keily M", "Lucian L", "Scarlett D", "Jordan D", "Flynn G", "Coraline F", "Kase S"]
-
-while len(classlist) > 0:
-  randomPick = random.choice(classlist)
-  if tablenumber == 1:
-    table1.append(randomPick)
-  if tablenumber == 2:
-    table2.append(randomPick)
-  if tablenumber == 3:
-    table3.append(randomPick)
-  if tablenumber == 4:
-    table4.append(randomPick)
-  if tablenumber == 5:
-    table5.append(randomPick)
-  if tablenumber == 6:
-    table6.append(randomPick)
-  if tablenumber == 7:
-    table7.append(randomPick)
-  if tablenumber == 8:
-    table8.append(randomPick)
-  if tablenumber == 9:
-    table9.append(randomPick)
-  if tablenumber == 10:
-    table10.append(randomPick)
-  classlist.remove(randomPick)
-  tablenumber = tablenumber + 1
-  if tablenumber == 11:
-      tablenumber = 1
+while len(classList) > 0:
+    randomPick = random.choice(classList)
     
+    if tableNumber == 1:
+        table1.append(randomPick)
+    elif tableNumber == 2:
+        table2.append(randomPick)
+    elif tableNumber == 3:
+        table3.append(randomPick)
+    elif tableNumber == 4:
+        table4.append(randomPick)
+    elif tableNumber == 5:
+        table5.append(randomPick)
+    elif tableNumber == 6:
+        table6.append(randomPick)
+    elif tableNumber == 7:
+        table7.append(randomPick)
+    elif tableNumber == 8:
+        table8.append(randomPick)
+    elif tableNumber == 9:
+        table9.append(randomPick)
+    elif tableNumber == 10:
+        table10.append(randomPick)
+        
+    classList.remove(randomPick) 
+    
+    tableNumber = tableNumber + 1
+    if tableNumber > 10:
+        tableNumber = 1
+
+print("Your Groups...")
 print("Table 1: ", table1)
 print("Table 2: ", table2)
 print("Table 3: ", table3)
@@ -54,5 +60,4 @@ print("Table 6: ", table6)
 print("Table 7: ", table7)
 print("Table 8: ", table8)
 print("Table 9: ", table9)
-print("Table 10:", table10)
-
+print("Table 10: ", table10)
