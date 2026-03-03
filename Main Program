@@ -7,6 +7,10 @@ classList = userinput.split(",")
 
 random.shuffle(classList)
 
+groupsizeinput = input("do you want groups of 2, 3, or 4?: ")
+groupsize = int(groupsizeinput)
+
+
 table1 = []
 table2 = []
 table3 = []
@@ -20,9 +24,9 @@ table10 = []
 
 tableNumber = 1
 
-while len(classList) > 0:
+if groupsize == 2:
+    while len(classList) > 0:
     randomPick = random.choice(classList)
-    
     if tableNumber == 1:
         table1.append(randomPick)
     elif tableNumber == 2:
@@ -50,14 +54,14 @@ while len(classList) > 0:
     if tableNumber > 10:
         tableNumber = 1
 
-print("Your Groups...")
-print("Table 1: ", table1)
-print("Table 2: ", table2)
-print("Table 3: ", table3)
-print("Table 4: ", table4)
-print("Table 5: ", table5)
-print("Table 6: ", table6)
-print("Table 7: ", table7)
-print("Table 8: ", table8)
-print("Table 9: ", table9)
-print("Table 10: ", table10)
+    print("Your Groups...")
+    print("Table 1: ", table1)
+    print("Table 2: ", table2)
+    print("Table 3: ", table3)
+    print("Table 4: ", table4)
+    print("Table 5: ", table5)
+    print("Table 6: ", table6)
+    print("Table 7: ", table7)
+    print("Table 8: ", table8)
+    print("Table 9: ", table9)
+    print("Table 10: ", table10)
