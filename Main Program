@@ -3,65 +3,72 @@ import random
 print('--- Group Maker 3000 ---')
 
 userinput = input("enter students names with commas: ")
-classList = userinput.split(",")
+classList = [name.strip() for name in userinput.split(",")]
+
+# --- NEW: THE SEPARATION SYSTEM ---
+sep1 = input("Enter first student to separate: ")
+sep2 = input("Enter second student to separate: ")
+
+# Remove them from the shuffle so we can place them manually
+if sep1 in classList and sep2 in classList:
+    classList.remove(sep1)
+    classList.remove(sep2)
 
 random.shuffle(classList)
 
 groupsizeinput = input("do you want groups of 2, 3, or 4?: ")
 groupsize = int(groupsizeinput)
 
+table1, table2, table3, table4, table5 = [], [], [], [], []
+table6, table7, table8, table9, table10 = [], [], [], [], []
 
-table1 = []
-table2 = []
-table3 = []
-table4 = []
-table5 = []
-table6 = []
-table7 = []
-table8 = []
-table9 = []
-table10 = []
+# Manually place the rivals at Table 1 and Table 2 first
+table1.append(sep1)
+table2.append(sep2)
 
 tableNumber = 1
 
-if groupsize == 2:
-    while len(classList) > 0:
-    randomPick = random.choice(classList)
+while len(classList) > 0:
+    randomPick = classList.pop()
+    
     if tableNumber == 1:
         table1.append(randomPick)
+        if len(table1) == groupsize: tableNumber = 2
     elif tableNumber == 2:
         table2.append(randomPick)
+        if len(table2) == groupsize: tableNumber = 3
     elif tableNumber == 3:
         table3.append(randomPick)
+        if len(table3) == groupsize: tableNumber = 4
     elif tableNumber == 4:
         table4.append(randomPick)
+        if len(table4) == groupsize: tableNumber = 5
     elif tableNumber == 5:
         table5.append(randomPick)
+        if len(table5) == groupsize: tableNumber = 6
     elif tableNumber == 6:
         table6.append(randomPick)
+        if len(table6) == groupsize: tableNumber = 7
     elif tableNumber == 7:
         table7.append(randomPick)
+        if len(table7) == groupsize: tableNumber = 8
     elif tableNumber == 8:
         table8.append(randomPick)
+        if len(table8) == groupsize: tableNumber = 9
     elif tableNumber == 9:
         table9.append(randomPick)
+        if len(table9) == groupsize: tableNumber = 10
     elif tableNumber == 10:
         table10.append(randomPick)
-        
-    classList.remove(randomPick) 
-    
-    tableNumber = tableNumber + 1
-    if tableNumber > 10:
-        tableNumber = 1
 
-    print("Your Groups...")
-    print("Table 1: ", table1)
-    print("Table 2: ", table2)
-    print("Table 3: ", table3)
-    print("Table 4: ", table4)
-    print("Table 5: ", table5)
-    print("Table 6: ", table6)
-    print("Table 7: ", table7)
-    print("Table 8: ", table8)
-    print("Table 9: ", table9)
-    print("Table 10: ", table10)
+print("\nYour Groups (Separated)...")
+print("Table 1: ", table1)
+print("Table 2: ", table2)
+print("Table 3: ", table3)
+print("Table 4: ", table4)
+print("Table 5: ", table5)
+print("Table 6: ", table6)
+print("Table 7: ", table7)
+print("Table 8: ", table8)
+print("Table 9: ", table9)
+print("Table 10: ", table10)
