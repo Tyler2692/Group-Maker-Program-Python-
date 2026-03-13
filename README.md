@@ -6,4 +6,5 @@ For a list of 20 students
 -randomly create groups of 4
 -allow for exceptions to be made (i.e. two students cannot be in the same group)
 
-name list:ames, Mary, Robert, Patricia, John, Jennifer, Michael, Linda, David, Elizabeth, William, Barbara, Richard, Susan, Joseph, Jessica, Thomas, Sarah, Christopher, Karen
+name list: Ames, Mary, Robert, Patricia, John, Jennifer, Michael, Linda, David, Elizabeth, William, Barbara, Richard, Susan, Joseph, Jessica, Thomas, Sarah, Christopher, Karen
+
