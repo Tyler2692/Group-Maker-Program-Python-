@@ -1,28 +1,44 @@
 import random
 
-print('--- Group Maker 3000 ---')
+print('Welcome to the Group Maker 3000 Program!')
 
 userinput = input("enter students names with commas: ")
 classList = [name.strip() for name in userinput.split(",")]
 
-# --- NEW: THE SEPARATION SYSTEM ---
-sep1 = input("Enter first student to separate: ")
-sep2 = input("Enter second student to separate: ")
+# validation for seperated students
+while True:
+    sep1 = input("Enter first student to separate: ")
+    if sep1 in classList:
+        break
+    print(f"Error: '{sep1}' is not in the class list. Please try again.")
 
-# Remove them from the shuffle so we can place them manually
-if sep1 in classList and sep2 in classList:
-    classList.remove(sep1)
-    classList.remove(sep2)
+while True:
+    sep2 = input("Enter second student to separate: ")
+    if sep2 in classList and sep2 != sep1:
+        break
+    elif sep2 == sep1:
+        print("Error: You already picked that student. Pick someone else to separate them from.")
+    else:
+        print(f"Error: '{sep2}' is not in the class list. Please try again.")
+
+# Remove students from the shuffle so they can be placed manually
+classList.remove(sep1)
+classList.remove(sep2)
 
 random.shuffle(classList)
 
-groupsizeinput = input("do you want groups of 2, 3, or 4?: ")
-groupsize = int(groupsizeinput)
+# validation for group size
+while True:
+    groupsizeinput = input("do you want groups of 2, 3, or 4?: ")
+    if groupsizeinput in ["2", "3", "4"]:
+        groupsize = int(groupsizeinput)
+        break
+    print("Error: Please enter only 2, 3, or 4.")
 
 table1, table2, table3, table4, table5 = [], [], [], [], []
 table6, table7, table8, table9, table10 = [], [], [], [], []
 
-# Manually place the rivals at Table 1 and Table 2 first
+# Manually place the students at Table 1 and Table 2 first
 table1.append(sep1)
 table2.append(sep2)
 
@@ -61,7 +77,7 @@ while len(classList) > 0:
     elif tableNumber == 10:
         table10.append(randomPick)
 
-print("\nYour Groups (Separated)...")
+print("\nYour Groups...")
 print("Table 1: ", table1)
 print("Table 2: ", table2)
 print("Table 3: ", table3)
